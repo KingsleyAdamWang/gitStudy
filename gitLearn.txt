@@ -1,0 +1,36 @@
+git学习
+
+1.pwd 显示当前所在的目录
+2.cd 同windows的cmd/linux下的terminal中的cd 进入某个文件夹中
+3.clear 清屏 同linux的terminal里面的命令
+
+git init在当前目录下面 创建仓库
+
+git add <file> 将某一个文件加入到commit中
+git commit -m "message" 将所有add的文件提交上去
+git diff <file> 查看某个文件的修改
+git commit -a -m "message" 无需一次次的add直接将所有的修改一次性的commit
+git log 查看当前这个分支的提交记录
+git log --pretty=online 一行模式查看log日志 只有编号(commit id)和提交时候的描述信息
+
+git status 查看当前的状态(有没有什么对文件的增删改)
+
+将当前项目返回到某一个版本
+首先明确当前的版本为HEAD版本
+上一个版本为 HEAD^ (HEAD~1)
+上上个版本为 HEAD^^(HEAD~2)
+………………………………………………………………………
+上100个版本为HEAD~100
+
+将当前版本回退到上一个版本
+git reset --hard HEAD^
+将当前版本回退到上两个版本
+git reset --hard HEAD^^
+将当前版本回退到上100个版本
+git reset --hard HEAD~100
+
+如果知道版本号(commit id)的话 也可以
+git reset --hard c8e6453749c31abcda4bc6bb878f7c0618dd732d
+
+回退到之前的版本如何看该版本之后的版本号(git log只能看到当前版本之前的所有版本号)
+git reflog
